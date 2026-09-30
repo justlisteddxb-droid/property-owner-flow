@@ -1,0 +1,16 @@
+{
+  "name": "property-owner-flow",
+  "version": "1.0.0",
+  "description": "WhatsApp Property Owner Inquiry Flow Endpoint",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
