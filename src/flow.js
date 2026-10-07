@@ -34,11 +34,11 @@ export async function getNextScreen(decryptedBody) {
     }
 
     if (hasProperty === "no" || hasProperty === "NO") {
-      return {
-        screen: "NO_PROPERTY",
-        data: {}
-      };
-    }
+  return {
+    screen: "NO_THANK_YOU",
+    data: {}
+  };
+}
 
     return {
       screen: "START",
