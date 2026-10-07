@@ -1,3 +1,4 @@
+import fs from "fs";
 import express from "express";
 import {
   decryptRequest,
@@ -19,10 +20,14 @@ app.use(
 
 const {
   APP_SECRET,
-  PRIVATE_KEY,
   PASSPHRASE = "",
   PORT = "3000"
 } = process.env;
+
+const PRIVATE_KEY = fs.readFileSync(
+  "/etc/secrets/private.pem",
+  "utf8"
+);
 
 app.post("/", async (req, res) => {
   if (!PRIVATE_KEY) {
