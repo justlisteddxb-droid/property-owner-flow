@@ -67,6 +67,15 @@ app.post("/", async (req, res) => {
   console.log("Decrypted Request:", decryptedBody);
 
   try {
+    if (decryptedBody.action === "ping") {
+  return res.send(
+    encryptResponse(
+      { data: { status: "active" } },
+      aesKeyBuffer,
+      initialVectorBuffer
+    )
+  );
+}
     const screenResponse = await getNextScreen(decryptedBody);
 
     console.log("Response:", screenResponse);
